@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSense - Your Personal AI Fashion Stylist</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-magic"></i>
+                <span>StyleSense</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#upload" class="nav-link">Try It</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <section id="upload" class="upload-section">
+        <div class="upload-container">
+            <h2>Let's Style You</h2>
+            
+            <form id="uploadForm" class="upload-form">
+                <div class="gender-selector">
+                    <label>I am:</label>
+                    <div class="gender-options">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Male" checked>
+                            <span class="radio-custom"><i class="fas fa-mars"></i> Male</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Female">
+                            <span class="radio-custom"><i class="fas fa-venus"></i> Female</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="occasion-selector" style="margin: 20px 0;">
+                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Styling For:</label>
+                    <select id="occasionSelect" name="occasion" style="width: 100%; max-width: 300px; padding: 12px; border: 2px solid #ddd; border-radius: 8px; outline: none; font-size: 1rem; cursor: pointer;">
+                        <option value="Casual Everyday">Casual Everyday</option>
+                        <option value="Office & Professional">Office & Professional</option>
+                        <option value="Party & Night Out">Party & Night Out</option>
+                        <option value="Wedding & Festive">Wedding & Festive</option>
+                        <option value="Activewear & Gym">Activewear & Gym</option>
+                    </select>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Drag & Drop Your Photo</h3>
+                    <p>or</p>
+                    <button type="button" class="browse-btn" id="browseBtn">Click to Browse</button>
+                    <input type="file" id="fileInput" name="file" accept="image/png, image/jpeg, image/jpg, image/webp" style="display: none;">
+                    <p class="file-limits">Supported: PNG, JPG, JPEG, WEBP (Max 10MB)</p>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn" disabled>Get Recommendations</button>
+            </form>
+
+            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing your style...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="results" class="results-section" style="display: none;">
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Your Personalized Style Profile</h2>
+                <button id="resetBtn" class="reset-btn"><i class="fas fa-redo"></i> Try Again</button>
+            </div>
+            
+            <div class="skin-tone-card">
+                <h3>Skin Tone Analysis</h3>
+                <p id="skinToneResult">Detecting...</p>
+            </div>
+
+            <div class="recommendation-grid">
+                <div class="rec-card">
+                    <h3><i class="fas fa-tshirt"></i> Outfit Recommendation</h3>
+                    <p id="outfitResult"></p>
+                </div>
+                <div class="rec-card">
+                    <h3><i class="fas fa-palette"></i> Color Palette</h3>
+                    <p id="colorResult"></p>
+                </div>
+                <div class="rec-card">
+                    <h3><i class="fas fa-glasses"></i> Accessories & Hair</h3>
+                    <p id="accResult"></p>
+                </div>
+                <div class="rec-card full-width">
+                    <h3><i class="fas fa-lightbulb"></i> Why It Works</h3>
+                    <p id="reasonResult"></p>
+                </div>
+                <div class="shopping-section" style="margin-top: 40px; border-top: 2px dashed #fdf0f4; padding-top: 20px;">
+                <h2 style="color: #d81b60; margin-bottom: 20px;"><i class="fas fa-shopping-bag"></i> Shop Your Style</h2>
+                <div id="shoppingGrid" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

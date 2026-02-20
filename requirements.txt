@@ -1,0 +1,8 @@
+flask
+flask-CORS
+pillow
+opencv-python
+groq
+python-dotenv
+werkzeug
+gunicorn
