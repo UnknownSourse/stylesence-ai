@@ -23,4 +23,4 @@ StyleSense is an intelligent fashion assistant designed to revolutionize how use
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/stylesense.git](https://github.com/your-username/stylesense.git)
+   git clone [https://github.com/chaithanya/stylesense.git](https://github.com/chaithanya/stylesense.git)
